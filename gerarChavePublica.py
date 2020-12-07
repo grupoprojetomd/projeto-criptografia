@@ -7,7 +7,7 @@ def gerarChavePublica(numeroPrimo1, numeroPrimo2, expoente):
             'chavePublica': 0
         }
 
-    expressao = (numeroPrimo1 - 1)*(numeroPrimo2 - 1) # 16
+    expressao = (numeroPrimo1 - 1)*(numeroPrimo2 - 1)
 
     saoPrimos = (modulos.mdc(expoente, expressao) == 1)
 
