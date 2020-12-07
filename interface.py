@@ -18,10 +18,7 @@ if (opcao == 1):
     expoente = int(input("Digite o expoente:"))
     chavePublica = gerarChavePublica(numeroPrimo1, numeroPrimo2, expoente)
 
-    if (chavePublica):
-        print("Sucesso")
-    else:
-        print("Algum erro ocorreu")
+    print(chavePublica)
 
 elif (opcao == 2):
 
