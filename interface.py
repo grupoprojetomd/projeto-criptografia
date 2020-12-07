@@ -24,6 +24,8 @@ if (opcao == 1):
     if (resultado['erro']):
         print(resultado['erro'])
     else:
+        arquivo = open("chave-publica.txt", "w")
+        arquivo.write("({}, {})".format(chavePublica[0], chavePublica[1]))
         print("Chave pública gerada com sucesso! Arquivo chave-publica.txt criado!")
 
 elif (opcao == 2):
