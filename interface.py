@@ -15,10 +15,16 @@ opcao = int(input("-> "))
 if (opcao == 1):
     numeroPrimo1 = int(input("Digite um número primo: "))
     numeroPrimo2 = int(input("Digite outro número primo: "))
-    expoente = int(input("Digite o expoente:"))
-    chavePublica = gerarChavePublica(numeroPrimo1, numeroPrimo2, expoente)
+    expoente = int(input("Digite o expoente: "))
+    
+    resultado = gerarChavePublica(numeroPrimo1, numeroPrimo2, expoente)
+    
+    chavePublica = resultado['chavePublica']
 
-    print(chavePublica)
+    if (resultado['erro']):
+        print(resultado['erro'])
+    else:
+        print("Chave pública gerada com sucesso! Arquivo chave-publica.txt criado!")
 
 elif (opcao == 2):
 
