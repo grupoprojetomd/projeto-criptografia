@@ -44,7 +44,4 @@ def encriptar(mensagem, chavePublica):
         equivalenteCifrado = int(math.pow(inteiro, chavePublica[1])) % chavePublica[0]
         equivalentesCifrados.append(equivalenteCifrado)
 
-    # print(sequenciaDeInteiros)
-    # print(equivalentesCifrados)
-
     return equivalentesCifrados
