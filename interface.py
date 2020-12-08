@@ -29,8 +29,27 @@ if (opcao == 1):
         print("Chave pública gerada com sucesso! Arquivo chave-publica.txt criado!")
 
 elif (opcao == 2):
+    texto = input('Digite a mensagem de texto que deseja encriptar: ')
 
-    encriptar()
+    chavePublica = []
+    chavePublica.append(int(input('Digite o primeiro valor da chave pública: ')))
+    chavePublica.append(int(input('Digite o valor do expoente: ')))
+
+    mensagemEncriptada = encriptar(texto, chavePublica)
+    quantidadeCaracteresMensagem = len(mensagemEncriptada) # 6
+
+    stringFinal = ""
+    for inteiro in range(quantidadeCaracteresMensagem):
+
+        numero = mensagemEncriptada[inteiro]
+        if (inteiro == 0):
+            stringFinal += str(numero)
+        else:
+            stringFinal += "," + str(numero)
+
+    arquivo = open("mensagem-encriptada.txt", "w")
+    arquivo.write(stringFinal)
+    print("Mensagem encriptada com sucesso!\nArquivo mensagem-encriptada.txt criado!")
 elif (opcao == 3):
     desencriptar()
 else:
