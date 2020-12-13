@@ -1,4 +1,5 @@
 import math
+import modulos
 
 def encriptar(mensagem, chavePublica):
 
@@ -33,15 +34,15 @@ def encriptar(mensagem, chavePublica):
         'Z': 27,
         ' ': 28,
     }
-    
+
     sequenciaDeInteiros = []
     for caractere in mensagemTransformada:
-        sequenciaDeInteiros.append(letras[caractere])
+        sequenciaDeInteiros.append(letras[caractere]) 
 
 
     equivalentesCifrados = []
     for inteiro in sequenciaDeInteiros:
-        equivalenteCifrado = int(math.pow(inteiro, chavePublica[1])) % chavePublica[0]
+        equivalenteCifrado = modulos.encontrarEquivalenteCifrado(inteiro, chavePublica[1], chavePublica[0])
         equivalentesCifrados.append(equivalenteCifrado)
 
     return equivalentesCifrados
