@@ -10,3 +10,4 @@ from .chineseTheorem import encontrarSolucaoTeoremaChines
 from .computePrimes import computePrimes
 from .encontrarEquivalenteCifrado import encontrarEquivalenteCifrado
 from .fermat import fermat
+from .findSolutionOfCongruence import putXOnInterval
