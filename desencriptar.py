@@ -4,7 +4,7 @@ def desencriptar(mensagemCriptografada, expoente, numeroPrimo1, numeroPrimo2):
     if (not modulos.isPrime(numeroPrimo1) or not modulos.isPrime(numeroPrimo2)):
         return {
             'erro': "Erro! É necessário informar números primos",
-            'chavePublica': 0
+            'mensagemFinal': 0
         }
 
     expressao = (numeroPrimo1 - 1)*(numeroPrimo2 - 1)
@@ -14,7 +14,7 @@ def desencriptar(mensagemCriptografada, expoente, numeroPrimo1, numeroPrimo2):
     if (not saoPrimos):
         return {
             'erro': "Erro! O expoente informado não é relativamente primo a (p - 1)(q - 1)",
-            'chavePublica': 0
+            'mensagemFinal': 0
         }
 
     letras = {
@@ -61,4 +61,7 @@ def desencriptar(mensagemCriptografada, expoente, numeroPrimo1, numeroPrimo2):
 
     mensagemFinal = ''.join(mensagemDescriptografada)
 
-    return mensagemFinal
+    return {
+        'erro': 0,
+        'mensagemFinal': mensagemFinal
+    }
