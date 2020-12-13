@@ -51,6 +51,23 @@ elif (opcao == 2):
     arquivo.write(stringFinal)
     print("Mensagem encriptada com sucesso!\nArquivo mensagem-encriptada.txt criado!")
 elif (opcao == 3):
-    desencriptar()
+    numeroPrimo1 = int(input("Digite um número primo: "))
+    numeroPrimo2 = int(input("Digite outro número primo: "))
+    expoente = int(input("Digite o expoente: "))
+
+    mensagemEncriptada = open("mensagem-encriptada.txt", "r")
+
+    mensagemEncriptadaArray = mensagemEncriptada.read().split(',')
+
+    resultado = desencriptar(mensagemEncriptadaArray, expoente, numeroPrimo1, numeroPrimo2)
+    mensagem = resultado['mensagemFinal']
+
+
+    if (resultado['erro']):
+        print(resultado['erro'])
+    else:
+        arquivo = open("mensagem-descriptografada.txt", "w")
+        arquivo.write(mensagem)
+        print("Mensagem descriptografada com sucesso!\nArquivo mensagem-descriptografada.txt criado!")
 else:
     print("Opção Inválida")

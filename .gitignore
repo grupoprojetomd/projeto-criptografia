@@ -1,5 +1,6 @@
 chave-publica.txt
 mensagem-encriptada.txt
+mensagem-descriptografada.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
