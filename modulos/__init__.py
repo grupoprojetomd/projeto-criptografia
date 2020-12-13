@@ -8,3 +8,4 @@ from .findSolutionOfCongruence import findSolutionOfCongruence
 from .findSolutionOfCongruence import putXOnInterval
 from .chineseTheorem import encontrarSolucaoTeoremaChines
 from .computePrimes import computePrimes
+from .encontrarEquivalenteCifrado import encontrarEquivalenteCifrado

@@ -1,4 +1,6 @@
 import math
+import functools
+import operator
 
 def dividirExpoenteEmPotencias(expoente):
     stringBinaria = bin(expoente)
@@ -21,4 +23,22 @@ def dividirExpoenteEmPotencias(expoente):
     for expoente in expoentes:
         parteDoExpoente = int(math.pow(2, expoente))
         partesDoExpoente.append(parteDoExpoente)
-    print(partesDoExpoente)
+        
+    return partesDoExpoente
+
+def encontrarEquivalenteCifrado(base, expoente, valorModulo):
+    partesDoExpoente = dividirExpoenteEmPotencias(expoente) 
+
+    listaDeMods = []
+    for expoente in partesDoExpoente:
+        if (expoente == 1):
+            listaDeMods.append((base ** expoente) % valorModulo)
+        else:
+            valorSeparado = (base ** int((expoente / 2))) % valorModulo
+            listaDeMods.append(((valorSeparado) * (valorSeparado)) % valorModulo)
+
+    a = functools.reduce(operator.mul, listaDeMods)
+
+    resultado = a % valorModulo
+
+    return resultado
